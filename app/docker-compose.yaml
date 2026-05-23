@@ -1,0 +1,26 @@
+services:
+  frontend:
+    container_name: frontend
+    image: malaria-classification-frontend:dev
+    build:
+      context: ./frontend
+      target: dev
+    command: ["npm", "run", "dev"]
+    environment:
+      - BACKEND_URL=http://localhost:5000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/express
+      - /express/node_modules
+    depends_on:
+      - backend
+  backend:
+    container_name: backend
+    image: malaria-classification-backend:dev
+    build: ./backend
+    command: ["gunicorn", "-w", "4", "--reload", "-b", "0.0.0.0:5000", "app:app"]
+    ports:
+      - "5000:5000" 
+    volumes:
+      - ./backend:/api

@@ -1,0 +1,14 @@
+metric,value
+test_loss,0.13460475206375122
+test_accuracy_model_evaluate,0.956095814704895
+accuracy,0.9560957910014514
+precision_parasitized,0.9577567370721048
+recall_parasitized,0.9542815674891146
+f1_parasitized,0.9560159941839331
+precision_macro,0.9561017958679396
+recall_macro,0.9560957910014514
+f1_macro,0.9560956464943571
+roc_auc_parasitized,0.9877749246399465
+test_images,2756
+correct_predictions,2635
+incorrect_predictions,121

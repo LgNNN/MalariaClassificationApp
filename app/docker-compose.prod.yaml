@@ -1,0 +1,22 @@
+services:
+  frontend:
+    container_name: frontend
+    image: malaria-classification-frontend:prod
+    build:
+      context: ./frontend
+      target: prod
+    environment:
+      - BACKEND_URL=http://localhost:5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    container_name: backend
+    image: malaria-classification-backend:prod
+    build: ./backend
+    ports:
+      - "5000:5000"
+    restart: unless-stopped

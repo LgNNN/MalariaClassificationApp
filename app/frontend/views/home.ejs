@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malaria App | Home</title>
+    <link rel="icon" href="malaria-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+</head>
+    <body>
+        <header>
+            <div>
+                <a class="brand-link" href="/" aria-label="Go to home page">
+                    <i class="fas fa-viruses"></i>
+                    <h3>Malaria DeepLearning</h3>
+                </a>
+            </div>
+            
+            <nav class="med-nav">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="https://github.com/LgNNN/MalariaClassificationApp" target="_blank" draggable="false"><i class="fab fa-github"></i></a>
+            </nav>
+        </header>
+        <main class="container">
+            <form>
+                <label for="threshold">Threshold:</label>
+                <input id="threshold" type="number" name="threshold" min="0.01" max="1" value="0.5" step="0.01">
+                <label for="file-id" class="custom-file-upload">
+                    <i class="fas fa-upload"></i>
+                    Upload Images
+                </label>
+                <input type="file" name="uploads" id="file-id" multiple accept="image/*">  
+                <input type="submit" name="submit" value="Analyze">
+            </form>
+            <div id="loader" class="lds-dual-ring"></div>
+            <section id="empty-state" class="empty-state">
+                <h2>Analyze cell images</h2>
+                <p>
+                    Upload one or more microscope cell images, then press Analyze to send them to the CNN model.
+                    The application will show each image with its predicted result and probability.
+                </p>
+                <p>
+                    The threshold controls how strict the classification is. A higher threshold requires stronger
+                    model confidence before a cell is treated as healthy, while a lower threshold accepts weaker
+                    healthy confidence and classifies more borderline cells as healthy.
+                </p>
+            </section>
+            <div id="gallery"></div>
+        </main>
+        <footer class="footer">
+            <p>Developed by <a class="name" href="https://github.com/LgNNN" target="_blank" draggable="false">Elia Tryfonas</a></p>
+        </footer>
+    <script>
+        window.MALARIA_APP_CONFIG = {
+            backendUrl: <%- JSON.stringify(backendUrl || 'http://localhost:5000') %>
+        };
+    </script>
+    <script src="home.js"></script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malaria App | About</title>
+    <link rel="icon" href="malaria-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+    <body>
+        <header>
+            <div>
+                <a class="brand-link" href="/" aria-label="Go to home page">
+                    <i class="fas fa-viruses"></i>
+                    <h3>Malaria DeepLearning</h3>
+                </a>
+            </div>
+            
+            <nav class="med-nav">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="https://github.com/LgNNN/MalariaClassificationApp" target="_blank" draggable="false"><i class="fab fa-github"></i></a>
+            </nav>
+        </header>
+        <main class="container">
+            <article class="about-content">
+                <p class="about-label">Bachelor thesis project</p>
+                <h1>Malaria DeepLearning</h1>
+                <p>
+                    This web application was developed as part of the thesis
+                    <strong>Development of web application and convolutional neural network for the image classification of human cells infected by malaria.</strong>
+                    The project combines a browser-based interface with a trained Convolutional Neural Network (CNN) for classifying red blood cell images.
+                </p>
+                <p>
+                    The frontend allows users to upload one or more cell images and adjust the classification threshold before analysis. The backend loads the trained TensorFlow model and returns a probability-based prediction for each image through HTTP requests.
+                </p>
+                <p>
+                    The system is intended as an educational and research implementation for the thesis. Its predictions should be interpreted as model outputs, not as a replacement for professional medical diagnosis.
+                </p>
+
+                <div class="about-links">
+                    <a href="https://github.com/LgNNN/MalariaClassificationApp" target="_blank" draggable="false">
+                        <i class="fab fa-github"></i>
+                        Project repository
+                    </a>
+                    <a href="https://github.com/LgNNN" target="_blank" draggable="false">
+                        Author profile
+                    </a>
+                </div>
+            </article>
+        </main>
+        <footer class="footer">
+            <p>Developed by <a class="name" href="https://github.com/LgNNN" target="_blank" draggable="false">Elia Tryfonas</a></p>
+        </footer> 
+    </body>
+</html>

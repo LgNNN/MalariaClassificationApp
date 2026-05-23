@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+app/frontend/node_modules/
+
+# Python/cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Environment/local configuration
+.env
+.env.*
+!.env.example
+
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Large local datasets and archives
+model_training/dataset/
+dataset/
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+*.docx
+*.xlsx
+pdfs/
+model_training/models/*.xlsx
+
+# Training artifacts not needed by the public app
+model_training/models/malariaNet-ep-1-fc-16-do-0.22-bs-32.keras

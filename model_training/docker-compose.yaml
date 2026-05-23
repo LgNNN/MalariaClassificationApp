@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    container_name: jupyter_notebook
+    build: .
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./dataset:/data
+      - ./models:/models
+    ports:
+      - 8888:8888
+    command: "start-notebook.sh --NotebookApp.token="
